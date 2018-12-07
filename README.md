@@ -1,4 +1,4 @@
-# RAMLogger
+# RAM Logger
 A continuous memory usage logger using C++ for a Linux system
 
 ## What is This?
