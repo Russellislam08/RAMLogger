@@ -7,7 +7,7 @@ This is a command line tool which will periodically log your current physical me
 ## Why Did I Make This?
 I was in the market for purchasing a new laptop as my current one, the one I used to write this, is in a very bad condition and warrants a replacement. However, the particular laptop I was looking at purchasing did not have user upgradeable memory.
 
-This meant that the configuration I buy now is permanent and cannot be changed. Since the memory was not upgradeable, I had to decide just how much I actually require. But to do so, I needed to know just how much of my system RAM do I actually use.
+This meant that the configuration I buy now is permanent and cannot be changed. Since the memory was not upgradeable, I had to decide just how much I actually require. But to do so, I needed to know just how much of my system RAM do I actually use on a typical basis.
 
 So, I decided to write a little program that would run in the background while I'm using my system under typical conditions and monitor how much memory I am using. At the end, this helped me figure out how much memory I would require in my future system but also made me more wary about just how much memory I use, even though it might not feel like a lot.
 
