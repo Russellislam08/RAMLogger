@@ -27,6 +27,8 @@ There exists a directory on Linux machines which contains system information abo
 
     /proc
 
+In this directory, there are many files and folders. There are folders for running processes and there exists some files that contain specific system information.
+
 However, the "proc file system" is special as it is a virtual file system. This means that they are not necessarily "real" files but it contains system runtime information. Since it is not a real file system, it is generally not a good idea to parse files within /proc.
 
 There is a built in C++ library on Linux machines called "sys/sysinfo.h" which should suffice to not have to parse the proc files. This library provides system statistics such as memory and swap memory usage. However, when I tried invoking this library to retrieve the values I required, the numbers given were slightly different than what were shown in the proc files. This is weird because the documentation for sysinfo itself says that all the information can be found within the proc directory. Not only does sysinfo provide numbers which seem off, it also does not provide all the information required. Specifically, it does not provide available memory.
