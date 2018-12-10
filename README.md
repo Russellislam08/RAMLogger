@@ -38,3 +38,8 @@ Upon further research, I found out that some Linux commands do indeed parse the 
 This file contains the main information such as total memory, free memory, available memory etc.
 
 Thus, I created a few functions which parses /proc/meminfo to retrieve the total system memory and the amount of system memory available.
+
+## Some Handy Links
+* More information on proc: http://tldp.org/LDP/Linux-Filesystem-Hierarchy/html/proc.html
+* Sysinfo documentation: http://man7.org/linux/man-pages/man2/sysinfo.2.html
+ 
