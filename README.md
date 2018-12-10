@@ -19,3 +19,19 @@ Next, compile the main.cpp file using g++ and execute the compiled file. The fil
 - The second argument is the path to the file which the program will log to. This can be relative or absolute and does not require a file extension.
 
 Once you're done, simply press ctrl+c to terminate the program.
+
+## How Did I Get Memory Information?
+This was the most difficult part of the program, as there isn't a completely straight forward approach.
+
+There exists a directory on Linux machines which contains system information about running processes, memory information, system runtime etc. This directory is:
+
+    /proc
+
+However, the "proc filesystem" is special as it is a virtual filesystem. This means that these are not necessarily "real" files but it contains system runtime information. Since it is not a real file system, it is generally not a good ide
+a to parse files within /proc.
+
+There is a built in C++ library on Linux machines called "sys/sysinfo.h" which should suffice to not have to parse the proc files. This library provides system statistics such as memory and swap memory usage. However, when I tried invoking this library to retrieve the values I required, the numbers given were slightly different than what were shown in the proc files. This is weird because the documentation for sys/sysinfo itself says that all the information can be found within the proc directory. Not only does sysinfo provide numbers which seem off, it also does not provide all the information required. Specifically, it does not provide available memory.
+
+Upon further research, I found out that some Linux commands do indeed parse the files in /proc to get necessary information. Commands such as 'top' parse these proc files themselves to get the information they require. Although it is not a good idea in general to parse these files, there exists one file which seems safe to parse as it remains consistent, which is /proc/meminfo. This file contains the main information such as total memory, free memory, available memory etc.
+
+Thus, I created a few functions which parses /proc/meminfo to retrieve the total system memory and the amount of system memory available.
